@@ -1,14 +1,8 @@
-'potato'
 var Queue = function() {
   var someInstance = {};
   var start = 0;
   var end = 0;
   var size = 0;
-
-  // Use an object with numeric keys to store values
-  var storage = {};
-
-  // Implement the methods below
 
   someInstance.enqueue = function(values) {
     someInstance[end++] = values;
