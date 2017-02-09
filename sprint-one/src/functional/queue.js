@@ -1,3 +1,4 @@
+'potato'
 var Queue = function() {
   var someInstance = {};
   var start = 0;

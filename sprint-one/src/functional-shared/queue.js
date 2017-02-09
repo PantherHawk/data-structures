@@ -4,37 +4,38 @@ var Queue = function() {
   var instance = {
   	start: 0,
   	end: 0,
-  	size: 0,
+  	length: 0,
   };
   _.extend(instance,queueMethods);
+  return instance;
 
 };
 
-var queueMethods = {};
+var queueMethods = {
+  enqueue : function(values) {
+    this[this.end++] = values;
+    this.length += 1;
+  },
 
-v
-
-  // Use an object with numeric keys to store values
-  var storage = {};
-
-  // Implement the methods below
-
-  someInstance.enqueue = function(values) {
-    someInstance[end++] = values;
-    size += 1;
-  };
-
-  someInstance.dequeue = function() {
-    if (size === 0) {
+  dequeue : function() {
+    if (this.length === 0) {
       return null;
-    }
-    var result = someInstance[start];
-    delete someInstance[start++];
-    size -= 1;
+    }                                 // 0: x, 1:y
+    var result = this[this.start]; // start result = 0: x
+    delete this[this.start++]; //1:y -- > 1
+    this.length -= 1;
     return result;
-  };
+  },
 
-  someInstance.size = function() {
-    return size;
-  };
-  return someInstance;
+  size : function() {
+    return this.length;
+  },
+};
+
+
+// var a = Queue() // {size : 0}
+// a.enqueue('x');
+// a.enqueue('y');
+// a // {size: 2, 0 : x, 1 : y}
+// a.dequeue() // a = {size : 1, 1: y }
+// a.size() // 2 *should be 1
