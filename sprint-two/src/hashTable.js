@@ -53,7 +53,7 @@ HashTable.prototype.retrieve = function(k) {
   if (entry !== undefined) {
     return entry.value;
   }
-}
+};
 
 // ip: name of a bottle of wine.
 // op: the bottle of wine.
