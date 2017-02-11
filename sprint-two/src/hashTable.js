@@ -73,6 +73,13 @@ HashTable.prototype.remove = function(k) {
   }), 1)[0].value;
 };
 
+// to resize we have to change all the index numbers already on our bottles.
+// first, change the limit to whatever you want to resize it to.
+  // iterate over all the stacks in the storage cellar.
+    // name old stacks oldStack.
+    // find all the entries in each bucket
+      // get the key of each entry and run hash function to get new index.
+
 // HashTable.prototype.superSeien = function()
 /*
  * Complexity: What is the time complexity of the above functions?
